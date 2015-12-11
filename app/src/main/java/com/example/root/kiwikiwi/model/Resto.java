@@ -2,9 +2,6 @@ package com.example.root.kiwikiwi.model;
 
 import java.util.List;
 
-/**
- * Created by root on 11/12/15.
- */
 public class Resto {
     String nom;
     String photo; // Chemin vers l'image, en res ou en url
@@ -35,6 +32,11 @@ public class Resto {
         this.avis = avis;
     }
 
+    public Resto(String photo, String nom, String ouvert) {
+        this.ouvert = ouvert;
+        this.photo = photo;
+        this.nom = nom;
+    }
 
     public String getNom() {
         return nom;
