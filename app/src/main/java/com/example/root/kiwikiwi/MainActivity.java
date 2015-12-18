@@ -28,10 +28,10 @@ public class MainActivity extends Activity {
 
     private List<Resto> genererRestos() {
         List<Resto> restos = new ArrayList<>();
-        restos.add(new Resto("", "C 'n P", "Ouvert..."));
-        restos.add(new Resto("", "Snoop", "Ouvert !"));
-        restos.add(new Resto("", "RU", "Ouvert."));
-        restos.add(new Resto("", "Chez Cédric", "Fermé"));
+        restos.add(new Resto("", "C 'n P", true));
+        restos.add(new Resto("", "Snoop", true));
+        restos.add(new Resto("", "RU", true));
+        restos.add(new Resto("", "Chez CÃ©dric", false));
         return restos;
     }
 }

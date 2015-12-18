@@ -5,7 +5,7 @@ import java.util.List;
 public class Resto {
     String nom;
     String photo; // Chemin vers l'image, en res ou en url
-    String ouvert; // Ouvert ou Fermé, juste pour toString
+    Boolean ouvert; // Ouvert ou Fermé, juste pour toString
     String adresse;
     String moyenPaiement;
     Integer niveauTarif; //Entre 1 et 3
@@ -16,7 +16,7 @@ public class Resto {
     List<Avis> avis;
 
 
-    public Resto(String nom, String photo, String ouvert, String adresse, String moyenPaiement,
+    public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,
                  Integer niveauTarif, String tempsAttente, String horaires, Categorie categorie,
                  String menuDuJour, List<Avis> avis) {
         this.nom = nom;
@@ -32,7 +32,7 @@ public class Resto {
         this.avis = avis;
     }
 
-    public Resto(String photo, String nom, String ouvert) {
+    public Resto(String photo, String nom, Boolean ouvert) {
         this.ouvert = ouvert;
         this.photo = photo;
         this.nom = nom;
@@ -46,7 +46,7 @@ public class Resto {
         return photo;
     }
 
-    public String getOuvert() {
+    public Boolean getOuvert() {
         return ouvert;
     }
 

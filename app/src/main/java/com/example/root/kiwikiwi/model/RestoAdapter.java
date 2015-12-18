@@ -25,9 +25,9 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.resto_item, parent, false);
         }
 
-        TweetViewHolder viewHolder = (TweetViewHolder) convertView.getTag();
+        RestoViewHolder viewHolder = (RestoViewHolder) convertView.getTag();
         if (viewHolder == null) {
-            viewHolder = new TweetViewHolder();
+            viewHolder = new RestoViewHolder();
             viewHolder.nom = (TextView) convertView.findViewById(R.id.nom);
             viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
             viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
@@ -39,13 +39,18 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         //il ne reste plus qu'à remplir notre vue
         viewHolder.nom.setText(resto.getNom());
-        viewHolder.ouvert.setText(resto.getOuvert());
+
+        if (resto.getOuvert())
+            viewHolder.ouvert.setText(R.string.resto_ouvert);
+        else
+            viewHolder.ouvert.setText(R.string.resto_ferme);
+
         //viewHolder.photo.setImageDrawable(new ColorDrawable(resto.getPhoto()));
 
         return convertView;
     }
 
-    private class TweetViewHolder {
+    private class RestoViewHolder {
         public TextView nom;
         public TextView ouvert;
         public ImageView photo;
